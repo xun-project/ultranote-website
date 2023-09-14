@@ -4,7 +4,8 @@
   "description": "Ultimate App Landing Page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 7000"
   },
   "keywords": [
     "app",
@@ -21,8 +22,9 @@
     "gulp-less": "^3.0.5",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
-    "less-plugin-glob": "^1.1.1",
     "gulp-watch": "^4.3.5",
-    "gulp-wrap": "^0.11.0"
+    "gulp-wrap": "^0.11.0",
+    "http-server": "^14.1.1",
+    "less-plugin-glob": "^1.1.1"
   }
 }
