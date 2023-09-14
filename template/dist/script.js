@@ -23644,22 +23644,27 @@ will produce an inaccurate conversion value. The same issue exists with the cx/c
 	// Docs: 
 	// https://github.com/aishek/jquery-animateNumber
 	// https://github.com/protonet/jquery.inview
-	(function() {
-		var numbers = $('.js-stats__number');
+	document.addEventListener("DOMContentLoaded", fetchCirculatingSupply);
 
-		numbers.each(function() {
-			var number = $(this);
-			var to = number.data('number');
-			var units = number.data('units') ? number.data('units') : '';
-
-			number.one("inview", function() {
-				number.animateNumber({
-					number: to,
-					numberStep: $.animateNumber.numberStepFactories.append(units)
-				}, 3000);
-			});
-		});
-	})();
+	async function fetchCirculatingSupply() {
+		try {
+			const response = await fetch("http://explorer.ultranote.org/q/supply/", { method: 'GET', mode: 'cors' });
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+	
+			const circulatingSupply = await response.text(); // Fetch data as text
+	
+			// Update the HTML element with the fetched Circulating Supply
+			const circulatingSupplyElement = document.querySelector('.js-stats__number');
+			if (circulatingSupplyElement) {
+				circulatingSupplyElement.textContent = circulatingSupply;
+			}
+		} catch (error) {
+			console.error('Error fetching Circulating Supply:', error);
+		}
+	}
+	
 	// Block name: Tabs
 	// Dependencies: jquery.easytabs.js, velocity.js
 	// Docs: 
