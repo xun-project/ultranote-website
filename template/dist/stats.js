@@ -3,25 +3,20 @@
 // Function to fetch and display hashrate
 async function fetchHashrate() {
     try {
-        const response = await fetch("https://explorer.ultranote.org/q/hashrate/");
+        const response = await fetch("https://explorer.ultranote.org/q/hashrate/", { mode: 'no-cors' });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
 
-        const hashpersec = await response.text();
+        // Use response.text() if the data is in text format, otherwise, use response.json() for JSON data
+        const responseData = await response.json(); // Assuming the response is JSON data
 
-        let description;
-        if (hashpersec / 1000000 > 1) {
-            description = `${(hashpersec / 1000000).toFixed(2)} MH/s`;
-        } else if (hashpersec / 1000 > 1) {
-            description = `${(hashpersec / 1000).toFixed(2)} kH/s`;
-        } else {
-            description = `${hashpersec.toFixed(2)} H/s`;
-        }
+        // Extract the hashrate from the JSON response (modify as needed)
+        const hashRate = responseData.hashrate;
 
         const e = document.querySelector('.js-hashrate');
         if (e) {
-            e.textContent = description;
+            e.textContent = `${hashRate.toFixed(2)} MH/s`;
         }
     } catch (error) {
         console.error('Error fetching Hashrate:', error);
@@ -31,12 +26,16 @@ async function fetchHashrate() {
 // Function to fetch and display height
 async function fetchHeight() {
     try {
-        const response = await fetch("https://explorer.ultranote.org/q/height/");
+        const response = await fetch("https://explorer.ultranote.org/q/height/", { mode: 'no-cors' });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
 
-        const height = await response.text();
+        // Use response.text() if the data is in text format, otherwise, use response.json() for JSON data
+        const responseData = await response.json(); // Assuming the response is JSON data
+
+        // Extract the height from the JSON response (modify as needed)
+        const height = responseData.height;
 
         const e = document.querySelector('.js-height');
         if (e) {
@@ -50,12 +49,16 @@ async function fetchHeight() {
 // Function to fetch and display reward
 async function fetchReward() {
     try {
-        const response = await fetch("https://explorer.ultranote.org/q/reward/");
+        const response = await fetch("https://explorer.ultranote.org/q/reward/", { mode: 'no-cors' });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
 
-        const reward = await response.text();
+        // Use response.text() if the data is in text format, otherwise, use response.json() for JSON data
+        const responseData = await response.json(); // Assuming the response is JSON data
+
+        // Extract the reward from the JSON response (modify as needed)
+        const reward = responseData.reward;
 
         const e = document.querySelector('.js-reward');
         if (e) {
@@ -69,12 +72,16 @@ async function fetchReward() {
 // Function to fetch and display supply
 async function fetchSupply() {
     try {
-        const response = await fetch("https://explorer.ultranote.org/q/supply/");
+        const response = await fetch("https://explorer.ultranote.org/q/supply/", { mode: 'no-cors' });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
 
-        const supply = await response.text();
+        // Use response.text() if the data is in text format, otherwise, use response.json() for JSON data
+        const responseData = await response.json(); // Assuming the response is JSON data
+
+        // Extract the supply from the JSON response (modify as needed)
+        const supply = responseData.supply;
 
         const e = document.querySelector('.js-supply');
         if (e) {
