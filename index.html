@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Page title -->
+	<title>UltraNote Infinity</title>
+	<!-- Page description -->
+	<meta name="description" content="UltraNote Infinity (XUNI) is a cryptocurrency project that utilizes the advanced CryptoNote V.2 technology to offer secure and decentralized transactions. In addition, it features an instant encrypted private messaging system with the ability to transfer files up to 100MB. To provide users with anonymous web browsing">
+	<!-- Meta -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- End of Meta -->
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/img/common/favicon/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/img/common/favicon/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/common/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/common/favicon/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/common/favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/img/common/favicon/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/img/common/favicon/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/img/common/favicon/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/common/favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="assets/img/common/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="assets/img/common/favicon/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="assets/img/common/favicon/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="assets/img/common/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="assets/img/common/favicon/manifest.json">
+	<link rel="shortcut icon" href="assets/img/common/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="assets/img/common/favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="assets/img/common/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<!-- End of Favicon -->
+	<!-- StyleSheets -->
+	<link rel="stylesheet" href="dist/style.css">
+	<!-- End of StyleSheets -->
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!-- Include dependencies: jquery, jquery.animateNumber, and jquery.inview -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="assets/js/vendor/plugins/jquery.animateNumber.js"></script>
+		<script src="assets/js/vendor/plugins/jquery.inview.js"></script>
+		
+		
+<!-- <script type="module">
+	import https from 'https://cdn.jsdelivr.net/npm/https@1.0.0/+esm'
+</script> -->
+		<!-- <script src="../node_modules/@types/node/https.d.ts"></script> -->
+		<!-- <script type="module" src="./dist/bundle.js"></script> -->
+		<!-- <script src="dist/stats.js" defer></script> -->
+		<script src="https://js.pusher.com/8.0.1/pusher.min.js"></script>
+		<script>
+	
+			// Enable pusher logging - don't include this in production
+		
+			var pusher = new Pusher('d0e03326515d43703ca2', {
+				cluster: 'us2'
+			});
+		
+			var hash_rate = pusher.subscribe('hash-rate');
+			var height = pusher.subscribe('height');
+			var reward = pusher.subscribe('reward');
+			var supply = pusher.subscribe('supply');
+
+			hash_rate.bind('client-event', function(data) {
+				alert(parseFloat(data.message));
+				const e = document.querySelector('.js-hashrate');
+        		if (e) 
+            		e.textContent = `${parseFloat(data.message).toFixed(2)} MH/s`;
+			});
+
+			height.bind('client-event', function(data) {
+				alert(parseFloat(data.message));
+				const e = document.querySelector('.js-height');
+        		if (e) 
+            		e.textContent = `${parseFloat(data.message)}`;
+			});
+
+			reward.bind('client-event', function(data) {
+				alert(parseFloat(data.message));
+				const e = document.querySelector('.js-reward');
+        		if (e) 
+            		e.textContent = `${parseFloat(data.message).toFixed(2)} XUNI`;
+			});
+
+			supply.bind('client-event', function(data) {
+				alert(parseFloat(data.message));
+				const e = document.querySelector('.js-supply');
+        		if (e) 
+            		e.textContent = `${parseFloat(data.message).toFixed(6)} XUNI`;
+			});
+			
+		</script>
+
+</head>
+
+<body class="js-preload-me ">
+	<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+	<!-- Preloader -->
+	<div class="preloader js-preloader ">
+		<span class="preloader__circle preloader__circle--primary"></span>
+		<span class="preloader__circle preloader__circle--secondary"></span>
+		<span class="preloader__circle preloader__circle--tertiary"></span>
+	</div>
+	<!-- End of Preloader -->
+	<!-- Page -->
+	<div class="page js-page ">
+		<!-- Mobile Menu -->
+		<div id="sidr">
+			<div class="mobile-menu__close js-mobile-menu__close"></div>
+			<ul class="mobile-menu js-mobile-menu ">
+				<li class="mobile-menu__item ">
+					<a href="index.html" class="mobile-menu__link">Home</a>
+				</li>
+				<li class="mobile-menu__item mobile-menu__item--button">
+					<a href="#wallet" class="mobile-menu__link js-scroll-to">Wallet</a>
+				</li>
+			</ul>
+				<li class="mobile-menu__item ">
+					<a href="#features" class="mobile-menu__link js-scroll-to">Features</a>
+				</li>
+				<li class="mobile-menu__item ">
+					<a href="#" class="mobile-menu__link">Tutorials</a>
+					<ul class="mobile-menu__child">
+						<li class="mobile-menu__item ">
+							<a href="#video" class="mobile-menu__link js-scroll-to">Video</a>
+						</li>
+						<li class="mobile-menu__item ">
+							<a href="#screenshots" class="mobile-menu__link js-scroll-to">Screenshots</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mobile-menu__item ">
+					<a href="#exchanges" class="mobile-menu__link js-scroll-to">Exchanges</a>
+				</li>
+				<li class="mobile-menu__item ">
+					<a href="#gallery" class="mobile-menu__link js-scroll-to">Gallery</a>
+				</li>
+				<li class="mobile-menu__item ">
+					<a href="#plans" class="mobile-menu__link js-scroll-to">Plans</a>
+				</li>
+				<li class="mobile-menu__item ">
+					<a href="#contacts" class="mobile-menu__link js-scroll-to">Contacts</a>
+				</li>
+
+		</div>
+		<!-- End of Mobile Menu -->
+		<!-- Header -->
+		<header class="header js-header ">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<!-- Logo -->
+						<div class="logo ">
+							<a href="index.html" class="logo__link">
+								<img src="assets/img/common/logo/logo.png" alt="Logo" class="logo__image js-logo__image" data-switch="true"> </a>
+						</div>
+						<!-- End of Logo -->
+
+						
+
+					</div>
+					<div class="col-md-20 col-sm-20 col-xs-12">
+						<!-- Menu -->
+						<nav>
+							<ul class="menu menu--right js-menu sf-menu ">
+								<li class="menu__item ">
+									<a href="index.html" class="menu__link">Home</a>
+									
+								</li>
+							
+								<li class="menu__item menu__item--button">
+									<a href="#wallet" class="menu__link js-scroll-to">Wallet</a>
+								</li>
+								<li class="menu__item ">
+									<a href="#features" class="menu__link js-scroll-to">Features</a>
+								</li>
+								<li class="menu__item ">
+									<a href="#" class="menu__link">Tutorials</a>
+									<ul class="menu__child">
+										<li class="menu__item ">
+											<a href="#video" class="menu__link js-scroll-to">Video</a>
+										</li>
+										<li class="menu__item ">
+											<a href="#screenshots" class="menu__link js-scroll-to">Screenshots</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item ">
+									<a href="#exchanges" class="menu__link js-scroll-to">Exchanges</a>
+								</li>
+								<li class="menu__item ">
+									<a href="#gallery" class="menu__link js-scroll-to">Gallery</a>
+								</li>
+								<li class="menu__item ">
+									<a href="#plans" class="menu__link js-scroll-to">Plans</a>
+								</li>
+								<li class="menu__item ">
+									<a href="#contacts" class="menu__link js-scroll-to">Contacts</a>
+								</li>
+
+							</ul>
+						</nav>
+						<!-- End of Menu -->
+						<!-- Menu Trigger -->
+						<a class="menu-trigger js-menu-trigger " href='sidr'> </a>
+						<!-- End of Menu Trigger -->
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- End of Header -->
+		<!-- Hero -->
+		<div class="hero hero--skin-1 ">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-14">
+						<!-- Push -->
+						<div class="push push--150  "> </div>
+						<!-- End of Push -->
+						<!-- Section Title 1 -->
+						<h2 class="section-title section-title--left section-title--light "> UltraNote Infinity
+							<span class='section-title__highlight'></span></h2>
+						<!-- End of Section Title 1-->
+						
+						<!-- Section Title 2 -->
+						<h2 class="section-title section-title--left section-title--light "> AN ONLINE
+						<span class='section-title__highlight'>PRIVACY SOLUTION</span> ON BLOCKCHAIN!</h2>
+						<!-- End of Section Title 2-->
+						
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--left section-subtitle--hero ">UltraNote Infinity (XUNI) is a cryptocurrency project that utilizes the advanced CryptoNote V.2 technology to offer secure and decentralized transactions. In addition, it features an instant encrypted private messaging system with the ability to transfer files up to 100MB. To provide users with anonymous web browsing.</p>
+															
+						<!-- End of Section Subtitle -->
+						<!-- Button -->
+						<div class="button button--small button--inline button--shadow  ">
+							<a href="WHITEPAPER_ULTRANOTE2.0.pdf" target="_blank" class="button__link">White Paper</a>
+						</div>
+						<!-- End of Button -->
+						<!-- Button -->
+						<div class="button button--small button--inline button--blue button--shadow  ">
+							<a href="#wallet" class="button__link">Our Wallet</a>
+						</div>
+						<!-- End of Button -->
+					</div>
+					<div class="col-md-10">
+						<!-- Device -->
+						<div class="device device--right  ">
+							<img src="assets/img/login.png" class="device__image" alt="Device Image"> </div>
+						<!-- End of Device -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of Hero -->
+<!-- Section -->
+<section class="section section--grey" id='wallet'>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-24">
+                <!-- Section Title -->
+                <h2 class="section-title section-title--center"> Download
+                    <span class='section-title__highlight'>XUNI</span> Wallet App</h2>
+                <!-- End of Section Title -->
+                <!-- Section Subtitle -->
+                <p class="section-subtitle section-subtitle--center"> available on all modern operating systems </p>
+                <!-- End of Section Subtitle -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-lg-offset-2">
+                <!-- Download Button -->
+                <a class="download-button" href="https://ultranote.org/xuni-cli-win64-v1.0.8.zip" target="_blank">
+                    <img src="assets/img/command.png" class="download-button__icon" alt="Platform Icon">
+                    <span class="download-button__platform">Command Line</span>
+                    <span class="download-button__store">Windows CLI</span>
+                </a>
+                <!-- End of Download Button -->
+            </div>
+            <div class="col-lg-6 col-md-8 col-lg-offset-1">
+                <!-- Download Button -->
+                <a class="download-button" href="https://ultranote.org/UltraNoteInfinity-1.0.9-win64.exe" target="_blank">
+                    <img src="assets/img/windows.png" class="download-button__icon" alt="Platform Icon">
+                    <span class="download-button__platform">Desktop app on</span>
+                    <span class="download-button__store">Windows x64</span>
+                </a>
+                <!-- End of Download Button -->
+            </div>
+
+            <div class="col-lg-6 col-md-8 col-lg-offset-1">
+                <!-- Download Button -->
+                <a class="download-button" href="https://cloud.ultranote.org" target="_blank">
+                    <img src="assets/img/cloudy.png" class="download-button__icon" alt="Platform Icon">
+                    <span class="download-button__platform">Web Access</span>
+                    <span class="download-button__store">Cloud Wallet</span>
+                </a>
+                <!-- End of Download Button -->
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-lg-6 col-md-8 col-lg-offset-2">
+                <!-- Download Button -->
+                <a class="download-button" href="https://play.google.com/store/apps/details?id=com.ak.ultranoteinfinity.ultranote_infinity" target="_blank">
+                    <img src="assets/img/android.png" class="download-button__icon" alt="Platform Icon">
+                    <span class="download-button__platform">Android app on</span>
+                    <span class="download-button__store">Google Play</span>
+                </a>
+                <!-- End of Download Button -->
+            </div>
+            <div class="col-lg-6 col-md-8 col-lg-offset-1">
+                <!-- Download Button -->
+                <a class="download-button" href="#" target="_blank">
+                    <img src="assets/img/app-store.png" class="download-button__icon" alt="Platform Icon">
+                    <span class="download-button__platform">IOS app on</span>
+                    <span class="download-button__store">App Store</span>
+                </a>
+                <!-- End of Download Button -->
+            </div>
+
+            <div class="col-lg-6 col-md-8 col-lg-offset-1">
+                <!-- Download Button -->
+                <a class="download-button" href="https://paperwallet.ultranote.org/" target="_blank">
+                    <img src="assets/img/cloudy.png" class="download-button__icon" alt="Platform Icon">
+                    <span class="download-button__platform">Cold Storage</span>
+                    <span class="download-button__store">Paper Wallet</span>
+                </a>
+                <!-- End of Download Button -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Section -->
+
+			
+		<!-- Section -->
+		<section class="section section--skin-1 " id='features'>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<!-- Push -->
+						<div class="push push--60  "> </div>
+						<!-- End of Push -->
+						
+						<!-- Section Title -->
+						<h2 class="section-title ">UltraNote Blockchain Features</h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle "> To name some of many feautures</p>
+						<!-- End of Section Subtitle -->
+						<!-- List -->
+						<ul class="list list--check  ">
+							<li class="list__item">Wallet-Integrated CPU Mining</li>
+							<li class="list__item">3% APY Wallet Deposit Facility</li>
+							<li class="list__item">Wallet-Integrated TOR Web Browser</li>
+							<li class="list__item">SHA-2048 Encrypted IPFS File Transfer</li>
+							<li class="list__item">Anonymous Untraceable Encrypted Messaging</li>
+							<li class="list__item">Easy Efficient CPU-GPU ASIC Resistant Mining</li>						
+						</ul>
+						<!-- End of List -->
+						<!-- List -->
+						<ul class="list list--boxes  ">
+							<li class="list__item">
+								<!-- Box -->
+								<div class="box  ">
+									<img src="assets/img/cpu.png" class="box__icon" alt="Box icon"> </div>
+								<!-- End of Box -->
+							</li>
+							<li class="list__item">
+								<!-- Box -->
+								<div class="box  ">
+									<img src="assets/img/bank.png" class="box__icon" alt="Box icon"> </div>
+								<!-- End of Box -->
+							</li>
+							<li class="list__item">
+								<!-- Box -->
+								<div class="box  ">
+									<img src="assets/img/website.png" class="box__icon" alt="Box icon"> </div>
+									<li class="list__item">
+								<!-- End of Box -->
+							</li>
+						</ul>
+						<!-- End of List -->
+						<!-- List -->
+						<ul class="list list--boxes  ">
+							<li class="list__item">
+								<!-- Box -->
+							<div class="box  ">
+							<img src="assets/img/encrypted.png" class="box__icon" alt="Box icon"> </div>
+							<!-- End of Box -->
+							</li>
+							<li class="list__item">
+							<!-- Box -->
+							<div class="box  ">
+							<img src="assets/img/safe-mail.png" class="box__icon" alt="Box icon"> </div>
+							<!-- End of Box -->
+							</li>
+							<li class="list__item">
+								<!-- Box -->
+							<div class="box  ">
+							<img src="assets/img/circuit.png" class="box__icon" alt="Box icon"> </div>
+							<li class="list__item">
+								<!-- End of Box -->
+							</li>
+							</ul>
+								<!-- End of List -->
+					</div>
+
+					<div class="col-lg-12 col-md-11 col-md-offset-1 col-lg-offset-0">
+						<!-- Screens Preview -->
+						<div class="screens-preview screens-preview--right  ">
+							<img src="assets/img/dashboard.png" class="screens-preview__primary" alt="Primary Screenshot">
+							<img src="assets/img/history.png" class="screens-preview__secondary" alt="Secondary Screenshot"> </div>
+						<!-- End of Screens Preview -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-13 col-md-13">
+						<!-- Screens Preview -->
+						<div class="screens-preview  ">
+							<img src="assets/img/message.png" class="screens-preview__primary" alt="Primary Screenshot">
+							<img src="assets/img/message2.png" class="screens-preview__secondary" alt="Secondary Screenshot"> </div>
+						<!-- End of Screens Preview -->
+					</div>
+					<div class="col-lg-11 col-md-10 col-lg-offset-0 col-md-offset-1">
+						<!-- Push -->
+						<div class="push push--100  "> </div>
+						<!-- End of Push -->
+						<!-- Section Title -->
+						<h2 class="section-title "> Revolutionizing Communication with End-to-End Blockchain Encryption </h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle "> Experience the future of secure communications with UltraNote messaging. our cutting-edge blockchain encrypted messaging system. Safeguard your conversations from prying eyes with robust end-to-end encryption, ensuring privacy and security like never before. </p>
+						<!-- End of Section Subtitle -->
+						<!-- Accordion -->
+						<ul class="accordion js-accordion ">
+							<li class="accordion__item">
+								<h3 class="accordion__title">
+									<img src="assets/img/encrypted-message.png" class="accordion__icon" alt="Accordion Icon"> SHA-2048 Encrypted Blockchain Messages </h3>
+								<div class="accordion__content">
+									<p>Our SHA-2048 Encrypted Blockchain Messages provide an unparalleled level of security and data integrity within blockchain communication. Utilizing the SHA-2048 cryptographic algorithm, these messages are shielded by an unbreakable layer of encryption, ensuring that the information exchanged remains confidential and tamper-proof.</p>
+								</div>
+							</li>
+							<li class="accordion__item">
+								<h3 class="accordion__title">
+									<img src="assets/img/encrypted-data.png" class="accordion__icon" alt="Accordion Icon"> SHA-4096 Encrypted Files Exchange </h3>
+								<div class="accordion__content">
+									<p>Our SHA-4096 Encrypted Files Exchange empowers secure sharing of files up to 100MB. Utilizing the robust SHA-4096 encryption algorithm, this service ensures your files remain confidential and tamper-resistant during transmission.</p>
+								</div>
+							</li>
+							<li class="accordion__item">
+								<h3 class="accordion__title">
+									<img src="assets/img/hourglass.png" class="accordion__icon" alt="Accordion Icon"> High Level Anonymity and Self-Destruct Timer </h3>
+								<div class="accordion__content">
+									<p>Our cutting-edge messaging platform offers top-level privacy with built-in anonymity and a self-destruct timer. Send messages with confidence, knowing your identity is protected, and your messages will automatically vanish after a set time, leaving no trace behind.</p>
+								</div>
+							</li>
+						</ul>
+						<!-- End of Accordion -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of Section -->
+		<!-- Section -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-24">
+					<a href="https://www.youtube.com/@ultranotesupport3057" target="_blank" class="section__button section__button--youtube">Our channel</a>
+				</div>
+			</div>
+		</div>
+		<section class="section section--grey " id='video'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-24">
+						<!-- Section Title -->
+						<h2 class="section-title section-title--center "> Take a video tour
+							<span class='section-title__highlight'>of our channel</span>
+						</h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--center "> Check our support channel on Youtube for tutorials and how to videos </p>
+						<!-- End of Section Subtitle -->
+					</div>
+				</div>
+			</div>
+			<!-- Video -->
+			<div class="video  ">
+				<a href="https://www.youtube.com/watch?v=1aBkhMnwhfM" target="_blank" class="video__holder js-video">
+					<img src="assets/img/common/backgrounds/intro.jpg" class="video__primary" alt="Primary Video Thumbnail">
+					<img src="assets/img/common/backgrounds/hand.png" class="video__secondary video__secondary--left" alt="Secondary Video Thumbnail">
+					<img src="assets/img/common/backgrounds/5.jpg" class="video__secondary video__secondary--right" alt="Secondary Video Thumbnail">
+					<span class="video__button"></span>
+				</a>
+			</div>
+			<!-- End of Video -->
+		</section>
+		<!-- End of Section -->
+		<!-- Section -->
+		<section class="section section--skin-2 " id='screenshots'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-24">
+						<!-- Section Title -->
+						<h2 class="section-title section-title--center "> Our app offers
+							<span class='section-title__highlight'>You</span>
+						</h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--center "> A complete privacy solutions for all your financial and communications needs </p>
+						<!-- End of Section Subtitle -->
+						<!-- Tabs -->
+						<div class="tabs js-tabs ">
+							<ul class="tabs__header">
+								<li class="tabs__title">
+									<a class="tabs__link" href="#firstTab">
+										<img src="assets/img/bank2.png" class="tabs__icon" alt="Tab icon"> Freedom Finance </a>
+								</li>
+								<li class="tabs__title">
+									<a class="tabs__link" href="#secondTab">
+										<img src="assets/img/chat2.png" class="tabs__icon" alt="Tab icon"> Secure Communications </a>
+								</li>
+								<li class="tabs__title">
+									<a class="tabs__link" href="#thirdTab">
+										<img src="assets/img/web3.png" class="tabs__icon" alt="Tab icon"> Web Browsing </a>
+								</li>
+							</ul>
+							<div id="firstTab" class="tabs__content">
+								<div class="tabs__izometric">
+									<img src="assets/img/deposit 1.png" class="tabs__screenshot" alt="Screen preview">
+									<img src="assets/img/billing.png" class="tabs__screenshot" alt="Screen preview">
+									<img src="assets/img/mining.png" class="tabs__screenshot" alt="Screen preview">
+									 </div>
+								<div class="tabs__regular">
+									<div class="row">
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="assets/img/deposit 1.png" class="tabs__screenshot" alt="Screen preview"> </div>
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="assets/img/billing.png" class="tabs__screenshot" alt="Screen preview"> </div>
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="assets/img/mining.png" class="tabs__screenshot" alt="Screen preview"></div>
+												
+										</div>
+								</div>
+							</div>
+							<div id="secondTab" class="tabs__content">
+								<div class="tabs__izometric">
+									<img src="http://placehold.it/930x470" class="tabs__screenshot" alt="Screen preview">
+									<img src="http://placehold.it/930x470" class="tabs__screenshot" alt="Screen preview">
+									<img src="http://placehold.it/930x470" class="tabs__screenshot" alt="Screen preview">
+								 </div>
+								<div class="tabs__regular">
+									<div class="row">
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="http://placehold.it/750x1334" class="tabs__screenshot" alt="Screen preview"> </div>
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="http://placehold.it/750x1334" class="tabs__screenshot" alt="Screen preview"> </div>
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="http://placehold.it/750x1334" class="tabs__screenshot" alt="Screen preview"> </div>
+										
+									</div>
+								</div>
+							</div>
+							<div id="thirdTab" class="tabs__content">
+								<div class="tabs__izometric">
+									<img src="http://placehold.it/930x470" class="tabs__screenshot" alt="Screen preview">
+									<img src="http://placehold.it/930x470" class="tabs__screenshot" alt="Screen preview">
+									<img src="http://placehold.it/930x470" class="tabs__screenshot" alt="Screen preview">
+									</div>
+								<div class="tabs__regular">
+									<div class="row">
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="http://placehold.it/750x1334" class="tabs__screenshot" alt="Screen preview"> </div>
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="http://placehold.it/750x1334" class="tabs__screenshot" alt="Screen preview"> </div>
+										<div class="col-md-8 col-sm-12 col-xs-24">
+											<img src="http://placehold.it/750x1334" class="tabs__screenshot" alt="Screen preview"> </div>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- End of Tabs -->
+						<!-- Push -->
+						<div class="push push--150  "> </div>
+						<!-- End of Push -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-24">
+						<!-- Section Title -->
+						<h2 class="section-title section-title--center "> UltraNote Infinity 
+							<span class='section-title__highlight'>Network</span> Statistics </h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--center "> Here you can see an up to date stats of UltraNote Infinity network </p>
+						<!-- End of Section Subtitle -->
+					</div>
+					<div class="col-md-6 col-md-offset-2 col-sm-8">
+						<!-- Stats -->
+					    <div class="stats">
+							<h3 class="stats__number js-stats__number">0</h3>
+							<p class="stats__description">Circulating Supply</p>
+						</div>
+						<!-- End of Stats -->
+					</div>
+					<div class="col-md-6 col-md-offset-1 col-sm-8">
+						<!-- Stats -->
+						<div class="stats stats--short  ">
+							<h3 class="stats__number js-stats__number" data-units="k" data-number="200">0</h3>
+							<p class="stats__description">Total Supply</p>
+						</div>
+						<!-- End of Stats -->
+					</div>
+					<div class="col-md-6 col-md-offset-1 col-sm-8">
+						<!-- Stats -->
+						<div class="stats  ">
+							<h3 class="stats__number js-stats__number" data-units="" data-number="21000000">21000000</h3>
+							<p class="stats__description">Max Supply</p>
+						</div>
+						<!-- End of Stats -->
+
+						
+					</div>
+
+					<div class="col-md-6 col-md-offset-2 col-sm-8">
+						<!-- Stats -->
+						<div class="stats">
+    					<h3 class="stats__number js-stats__number" data-units="" data-number="100">0</h3>
+   						 <p class="stats__description">Total Banked</p>
+						</div>
+						<!-- End of Stats -->
+					</div>
+					<div class="col-md-6 col-md-offset-1 col-sm-8">
+						<!-- Stats -->
+						<div class="stats stats--short  ">
+							<h3 class="stats__number js-stats__number" data-units="k" data-number="200">0</h3>
+							<p class="stats__description">Blockchain Height</p>
+						</div>
+						<!-- End of Stats -->
+					</div>
+					<div class="col-md-6 col-md-offset-1 col-sm-8">
+						<!-- Stats -->
+						<div class="stats  ">
+							<h3 class="stats__number js-hashrate" data-units="" data-number="50">0</h3>
+							<p class="stats__description">Network Hashrate</p>
+						</div>
+						<!-- End of Stats -->
+
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of Section -->
+		<!-- Section -->
+		<section class="section section--small " id='exchanges'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-24">
+						<!-- Section Title -->
+						<h2 class="section-title section-title--center "> Where to buy
+							<span class='section-title__highlight'>XUNI and BXUNI</span>
+						</h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--center "> List of exchanges where you can trade and swap our coin and token </p>
+						<!-- End of Section Subtitle -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-lg-6">
+<!-- Member -->
+<div class="member">
+    <div class="member__photo-wrapper">
+        <a href="https://xeggex.com/market/XUNI_USDT" target="_blank">
+            <img src="assets/img/exchange1.png" class="member__photo" alt="Member Photo">
+        </a>
+    </div>
+    <h3 class="member__name">Xeggex</h3>
+    <p class="member__position">
+        <a href="https://xeggex.com/market/XUNI_USDT" target="_blank">XUNI / USDT</a>
+    </p>
+</div>
+<!-- End of Member -->
+
+					</div>
+					<div class="col-md-12 col-sm-12 col-lg-6">
+						<!-- Member -->
+<div class="member">
+    <div class="member__photo-wrapper">
+        <a href="https://xeggex.com/market/XUNI_BXUNI" target="_blank">
+            <img src="assets/img/exchange1.png" class="member__photo" alt="Member Photo">
+        </a>
+    </div>
+    <h3 class="member__name">Xeggex</h3>
+    <p class="member__position">
+        <a href="https://xeggex.com/market/XUNI_BXUNI" target="_blank">XUNI / bXUNI</a>
+    </p>
+</div>
+<!-- End of Member -->
+
+					</div>
+					<div class="col-md-12 col-sm-12 col-lg-6">
+<!-- Member -->
+<div class="member">
+    <div class="member__photo-wrapper">
+        <a href="https://xeggex.com/market/BXUNI_USDT" target="_blank">
+            <img src="assets/img/exchange1.png" class="member__photo" alt="Member Photo">
+        </a>
+    </div>
+    <h3 class="member__name">Xeggex</h3>
+    <p class="member__position">
+        <a href="https://xeggex.com/market/BXUNI_USDT" target="_blank">bXUNI / USDT</a>
+    </p>
+</div>
+<!-- End of Member -->
+
+					</div>
+					<div class="col-md-12 col-sm-12 col-lg-6">
+<!-- Member -->
+<div class="member">
+    <div class="member__photo-wrapper">
+        <a href="https://xeggex.com/market/BXUNI_BTC" target="_blank">
+            <img src="assets/img/exchange1.png" class="member__photo" alt="Member Photo">
+        </a>
+    </div>
+    <h3 class="member__name">Xeggex</h3>
+    <p class="member__position">
+        <a href="https://xeggex.com/market/BXUNI_BTC" target="_blank">bXUNI / BTC</a>
+    </p>
+</div>
+<!-- End of Member -->
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of Section -->
+		
+		<!-- Section -->
+		<section class="section section--large " id='gallery'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-24">
+						<!-- Section Title -->
+						<h2 class="section-title section-title--center "> App screenshot
+							<span class='section-title__highlight'>gallery</span>
+						</h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--center ">Explore a collection of captivating screenshots that showcase the app's design, functionality, and user experience </p>
+						<!-- End of Section Subtitle -->
+					</div>
+				</div>
+			</div>
+			<!-- Carousel -->
+			<div class="carousel  ">
+				<div class="carousel__outer">
+					<div class="carousel__inner js-carousel owl-carousel">
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Edit screen</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Tasks</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Achievements</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Search</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Card overlay</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Player</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Dashboard</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Shop</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Camera</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">Stats</h3>
+						</div>
+						<div class="carousel__slide">
+							<img src="http://placehold.it/432x768" class="carousel__image" alt="Carousel Slide Image">
+							<h3 class="carousel__title">New article</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End of Carousel -->
+		</section>
+		<!-- End of Section -->
+		<!-- Section -->
+		<section class="section section--skin-3 section--small " id='socials'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-20 col-md-offset-2">
+						<!-- Section Title -->
+						<h2 class="section-title section-title--center section-title--light "> Get in touch with
+							<span class='section-title__highlight'>our team</span>
+						</h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--center "> We will be very happy to assist you anytime </p>
+						<!-- End of Section Subtitle -->
+					
+					</div>
+				</div>
+			</div>
+			<!-- Socials -->
+			<ul class="socials socials--displaced  ">
+				<li class="socials__item">
+					<a href="#" class="socials__button socials__button--facebook">
+						<i class="fontello-facebook socials__icon"></i>
+					</a>
+				</li>
+				<li class="socials__item">
+					<a href="#" class="socials__button socials__button--twitter">
+						<i class="fontello-twitter-bird socials__icon"></i>
+					</a>
+				</li>
+				<li class="socials__item">
+					<a href="#" class="socials__button socials__button--linkedin">
+						<i class="fontello-linkedin socials__icon"></i>
+					</a>
+				</li>
+				<li class="socials__item">
+					<a href="#" class="socials__button socials__button--google">
+						<i class="fontello-gplus socials__icon"></i>
+					</a>
+				</li>
+				<li class="socials__item">
+					<a href="#" class="socials__button socials__button--pinterest">
+						<i class="fontello-pinterest socials__icon"></i>
+					</a>
+				</li>
+			</ul>
+			<!-- End of Socials -->
+		</section>
+		<!-- End of Section -->
+		<!-- Section -->
+		<section class="section section--large " id='plans'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-24">
+						<!-- Section Title -->
+						<h2 class="section-title section-title--center "> Our awesome
+							<span class='section-title__highlight'>pricing plans</span>
+						</h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--center "> Lorem ipsum dolor sit amet, eos fierent pertinacia eu est elit tincidunt sadipscing te </p>
+						<!-- End of Section Subtitle -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-sm-16 col-sm-offset-4 col-md-offset-0">
+						<!-- Pricing -->
+						<div class="pricing  ">
+							<h3 class="pricing__title">Starter Plan</h3>
+							<h4 class="pricing__price">free</h4>
+							<ul class="pricing__features">
+								<li class="pricing__feature">
+									<span class="pricing__highlight">3</span> domain licenses</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">5</span> downloads per month</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">1</span> regular extension</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">10</span> active sessions at once</li>
+								<li class="pricing__feature pricing__feature--passive">updates</li>
+								<li class="pricing__feature pricing__feature--passive">premium support</li>
+							</ul>
+							<!-- Button -->
+							<div class="button button--small button--shadow button--dark  ">
+								<a href="" class="button__link">Sign up</a>
+							</div>
+							<!-- End of Button -->
+						</div>
+						<!-- End of Pricing -->
+					</div>
+					<div class="col-md-8 col-sm-16 col-sm-offset-4 col-md-offset-0">
+						<!-- Pricing -->
+						<div class="pricing pricing--featured  ">
+							<h3 class="pricing__title">Advanced Plan</h3>
+							<h4 class="pricing__price">
+								<span class="pricing__placeholder">
+									<span class="pricing__currency">$</span> 29
+									<span class="pricing__frequency">/mo</span>
+								</span>
+							</h4>
+							<ul class="pricing__features">
+								<li class="pricing__feature">
+									<span class="pricing__highlight">5</span> domain licenses</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">10</span> downloads per month</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">2</span> regular extension</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">20</span> active sessions at once</li>
+								<li class="pricing__feature">updates</li>
+								<li class="pricing__feature pricing__feature--passive">premium support</li>
+							</ul>
+							<!-- Button -->
+							<div class="button button--small button--shadow button--dark  ">
+								<a href="" class="button__link">Sign up</a>
+							</div>
+							<!-- End of Button -->
+						</div>
+						<!-- End of Pricing -->
+					</div>
+					<div class="col-md-8 col-sm-16 col-sm-offset-4 col-md-offset-0">
+						<!-- Pricing -->
+						<div class="pricing  ">
+							<h3 class="pricing__title">Professional Plan</h3>
+							<h4 class="pricing__price">
+								<span class="pricing__placeholder">
+									<span class="pricing__currency">$</span> 49
+									<span class="pricing__frequency">/mo</span>
+								</span>
+							</h4>
+							<ul class="pricing__features">
+								<li class="pricing__feature">
+									<span class="pricing__highlight">10</span> domain licenses</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">unlimited</span> downloads per month</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">unlimited</span> regular extension</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">200</span> active sessions at once</li>
+								<li class="pricing__feature">updates</li>
+								<li class="pricing__feature">
+									<span class="pricing__highlight">premium support</span>
+								</li>
+							</ul>
+							<!-- Button -->
+							<div class="button button--small button--shadow button--dark  ">
+								<a href="" class="button__link">Sign up</a>
+							</div>
+							<!-- End of Button -->
+						</div>
+						<!-- End of Pricing -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of Section -->
+		<!-- Section -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-24">
+					<a href="https://twitter.com/ultranotecoin" class="section__button section__button--twitter">Follow us</a>
+				</div>
+			</div>
+		</div>
+		<section class="section section--blue " id='twitter'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-6 col-sm-16 col-sm-offset-4">
+						<!-- Twitter Widget -->
+						<div class="twitter-widget js-twitter-widget owl-carousel " data-user='envato' data-max='5' data-lang='en'> </div>
+						<!-- End of Twitter Widget -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End of Section -->
+		<!-- Section -->
+		<section class="section section--large section--no-pb " id='contacts'>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-24">
+						<!-- Section Title -->
+						<h2 class="section-title section-title--center "> Get in touch
+							<span class='section-title__highlight'>with us</span>
+						</h2>
+						<!-- End of Section Title -->
+						<!-- Section Subtitle -->
+						<p class="section-subtitle section-subtitle--center "> Lorem ipsum dolor sit amet, eos fierent pertinacia eu est elit tincidunt sadipscing te </p>
+						<!-- End of Section Subtitle -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-20 col-lg-offset-2 col-md-24 col-md-offset-0">
+						<!-- Contact Form -->
+						<div class="contact-form  ">
+							<form action="blocks/contact-form/contact-form.php" class="contact-form__form js-contact-form">
+								<div class="contact-form__modal js-contact-form__modal">
+									<h3 class="contact-form__message"> Your message was sent
+										<span>successfully</span>
+										<br>Thank you! </h3>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<label class="contact-form__label" for="name-input">Your name</label>
+										<!-- Input -->
+										<div class="input input--contact  ">
+											<input type="text" name="name-input" class="input__field" placeholder="" id="name-input" data-validation="required"> </div>
+										<!-- End of Input -->
+										<label class="contact-form__label" for="email-input">Your e-mail</label>
+										<!-- Input -->
+										<div class="input input--contact  ">
+											<input type="text" name="email-input" class="input__field" placeholder="" id="email-input" data-validation="required email"> </div>
+										<!-- End of Input -->
+										<label class="contact-form__label" for="subject-input">Subject</label>
+										<!-- Input -->
+										<div class="input input--contact  ">
+											<input type="text" name="subject-input" class="input__field" placeholder="" id="subject-input" data-validation="required"> </div>
+										<!-- End of Input -->
+									</div>
+									<div class="col-md-12">
+										<label class="contact-form__label" for="message-input">Your Message</label>
+										<textarea name="message-input" id="message-input" class="contact-form__textarea" data-validation="required"></textarea>
+										<!-- Button -->
+										<div class="button button--small button--shadow  ">
+											<input type="submit" class="button__input" value="Send us the message"> </div>
+										<!-- End of Button -->
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- End of Contact Form -->
+					</div>
+				</div>
+			</div>
+			<!-- Map -->
+			<div class="map  " id="map" data-lon="40.799645" data-lat="-73.952437"> </div>
+			<!-- End of Map -->
+		</section>
+		<!-- End of Section -->
+		<!-- Footer -->
+		<footer class="footer ">
+			<a href="#" class="footer__scroll-top js-scroll-top">
+				<i class="fontello-level-up footer__scroll-icon"></i>
+			</a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Logo -->
+						<div class="logo ">
+							<a href="index.html" class="logo__link">
+								<img src="assets/img/common/logo/logo-dark.png" alt="Logo" class="logo__image"> </a>
+						</div>
+						<!-- End of Logo -->
+						
+						<p class="footer__message">Illum qui culpa facilis dolorum cum quis placeat recusandae voluptatum cumque quisquam quia quaerat sit vel harum aliquam unde!</p>
+					</div>
+					<div class="col-md-5 col-sm-12 col-xs-12 col-md-offset-2">
+						<!-- Link List -->
+						<nav class="link-list  ">
+							<ul>
+								<li class="link-list__item">
+									<a href="#" class="link-list__link">More information</a>
+								</li>
+								<li class="link-list__item">
+									<a href="#" class="link-list__link">FAQ</a>
+								</li>
+								<li class="link-list__item">
+									<a href="#" class="link-list__link">Term of use</a>
+								</li>
+							</ul>
+						</nav>
+						<!-- End of Link List -->
+					</div>
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<!-- Link List -->
+						<nav class="link-list  ">
+							<ul>
+								<li class="link-list__item">
+									<a href="http://twitter.com/vlad_sargu" class="link-list__link">Twitter</a>
+								</li>
+								<li class="link-list__item">
+									<a href="http://facebook.com" class="link-list__link">Facebook</a>
+								</li>
+								<li class="link-list__item">
+									<a href="http://instagram.com/vladsargu" class="link-list__link">Instagram</a>
+								</li>
+							</ul>
+						</nav>
+						<!-- End of Link List -->
+					</div>
+				</div>
+			</div>
+			<!-- Push -->
+			<div class="push push--80  "> </div>
+			<!-- End of Push -->
+			<!-- Instagram Widget -->
+			<ul class="instagram-widget  ">
+				<li class="instagram-widget__item instagram-widget__item--icon">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link instagram-widget__link--icon">
+						<i class="fontello-instagram instagram-widget__icon"></i>
+					</a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+				<li class="instagram-widget__item">
+					<a href="https://www.instagram.com/vladsargu/" class="instagram-widget__link">
+						<img src="http://placehold.it/288x288" class="instagram-widget__image" alt="Instagram Photo"> </a>
+				</li>
+			</ul>
+			<!-- End of Instagram Widget -->
+		</footer>
+		<!-- End of Footer -->
+	</div>
+	<!-- End of Page -->
+	<!-- Scripts -->
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="dist/script.js"></script>
+	<!-- End of Scripts -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<!-- 
+<script>
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+</script>
+-->
+	<!-- End of Analytics -->
+
+	<!-- <script>
+		// Create a custom agent
+		const agent = new window.https.Agent({
+		  rejectUnauthorized: false
+		});
+	
+		fetch('https://explorer.ultranote.org/q/hashrate/', { 
+		  agent: agent
+		})
+		  .then(response => response.text())
+		  .then(data => {
+			console.log(data);
+			// Process the response data
+		  })
+		  .catch(error => {
+			console.error("Error:", error);
+			// Handle the error
+		  });
+	  </script> -->
+</body>
+
+</html>

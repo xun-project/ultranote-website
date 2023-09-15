@@ -35,12 +35,15 @@
 	<!-- StyleSheets -->
 	<link rel="stylesheet" href="dist/style.css">
 	<!-- End of StyleSheets -->
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<!-- Include dependencies: jquery, jquery.animateNumber, and jquery.inview -->
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="assets/js/vendor/plugins/jquery.animateNumber.js"></script>
 		<script src="assets/js/vendor/plugins/jquery.inview.js"></script>
-		<script src="dist/stats.js"></script>
+		
+		<!-- <script src="dist/stats.js" defer></script> -->
 </head>
 
 <body class="js-preload-me ">
@@ -550,7 +553,7 @@
 					<div class="col-md-6 col-md-offset-2 col-sm-8">
 						<!-- Stats -->
 					    <div class="stats">
-							<h3 class="stats__number js-stats__number">0</h3>
+							<h3 class="stats__number js-stats__number js-supply">0</h3>
 							<p class="stats__description">Circulating Supply</p>
 						</div>
 						<!-- End of Stats -->
@@ -558,7 +561,7 @@
 					<div class="col-md-6 col-md-offset-1 col-sm-8">
 						<!-- Stats -->
 						<div class="stats stats--short  ">
-							<h3 class="stats__number js-stats__number" data-units="k" data-number="200">0</h3>
+							<h3 class="stats__number js-stats__number js-total-supply" data-units="k" data-number="200">0</h3>
 							<p class="stats__description">Total Supply</p>
 						</div>
 						<!-- End of Stats -->
@@ -566,7 +569,7 @@
 					<div class="col-md-6 col-md-offset-1 col-sm-8">
 						<!-- Stats -->
 						<div class="stats  ">
-							<h3 class="stats__number js-stats__number" data-units="" data-number="21000000">21000000</h3>
+							<h3 class="stats__number js-stats__number" data-units="" data-number="21000000">21M</h3>
 							<p class="stats__description">Max Supply</p>
 						</div>
 						<!-- End of Stats -->
@@ -577,7 +580,7 @@
 					<div class="col-md-6 col-md-offset-2 col-sm-8">
 						<!-- Stats -->
 						<div class="stats">
-    					<h3 class="stats__number js-stats__number" data-units="" data-number="100">0</h3>
+    					<h3 class="stats__number js-stats__number js-total-banked" data-units="" data-number="100">0</h3>
    						 <p class="stats__description">Total Banked</p>
 						</div>
 						<!-- End of Stats -->
@@ -585,7 +588,7 @@
 					<div class="col-md-6 col-md-offset-1 col-sm-8">
 						<!-- Stats -->
 						<div class="stats stats--short  ">
-							<h3 class="stats__number js-stats__number" data-units="k" data-number="200">0</h3>
+							<h3 class="stats__number js-stats__number js-height" data-units="k" data-number="200">0</h3>
 							<p class="stats__description">Blockchain Height</p>
 						</div>
 						<!-- End of Stats -->
@@ -1118,6 +1121,50 @@ ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 </script>
 -->
 	<!-- End of Analytics -->
+
+	<script src="https://js.pusher.com/8.0.1/pusher.min.js"></script>
+	<script>
+
+		// Enable pusher logging - don't include this in production
+	
+		var pusher = new Pusher('d0e03326515d43703ca2', {
+			cluster: 'us2'
+		});
+	
+		var Dragon = pusher.subscribe('Dragon');
+
+		Dragon.bind('hash-rate', function(data) {
+			// alert(data.message)
+			const e = document.querySelector('.js-hashrate');
+			if (e) 
+				e.textContent = `${parseInt(data.message)}`;
+		});
+
+		Dragon.bind('height', function(data) {
+			const e = document.querySelector('.js-height');
+			if (e) 
+				e.textContent = `${parseInt(data.message)}`;
+		});
+
+		Dragon.bind('totalsupply', function(data) {
+			const e = document.querySelector('.js-total-supply');
+			if (e) 
+				e.textContent = `${parseInt(data.message)}`;
+		});
+
+		Dragon.bind('supply', function(data) {
+			const e = document.querySelector('.js-supply');
+			if (e) 
+				e.textContent = `${parseInt(data.message)}`;
+		});
+
+		Dragon.bind('totalbanked', function(data) {
+			const e = document.querySelector('.js-total-banked');
+			if (e) 
+				e.textContent = `${parseInt(data.message)}`;
+		});
+		
+	</script>
 </body>
 
 </html>
