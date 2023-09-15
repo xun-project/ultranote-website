@@ -3446,7 +3446,7 @@ blockquote {
    Link
    ========================================================================== */
 a {
-	color: #1eb858;
+	color: purple;
 	text-decoration: none;
 	font-size: inherit;
 }
@@ -7925,7 +7925,7 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 
 .contact-form__message span {
-	color: #1eb858;
+	color: purple;
 }
 
 .contact-form__form {
@@ -8033,7 +8033,7 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 
 .dropdown__icon {
-	color: #1eb858;
+	color: purple;
 	position: absolute;
 	font-size: 22px;
 	left: 15px;
@@ -8105,11 +8105,11 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 
 .dropdown__item:hover {
-	color: #1eb858;
+	color: purple;
 }
 
 .dropdown__item--active {
-	color: #1eb858;
+	color: purple;
 }
 /* ==========================================================================
    Block: Error
@@ -8138,7 +8138,7 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 
 .error__highlight {
-	color: #1eb858;
+	color: purple;
 }
 
 .error__image {
@@ -8225,7 +8225,7 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 
 .error__arrow {
-	color: #1eb858;
+	color: purple;
 	position: absolute;
 	left: -25px;
 	top: 0px;
@@ -8350,7 +8350,7 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 
 .input__icon {
-	color: #1eb858;
+	color: purple;
 	position: absolute;
 	font-size: 24px;
 	left: 15px;
@@ -8488,7 +8488,7 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 
 .link-list__link:hover {
-	color: #1eb858;
+	color: purple;
 }
 /* ==========================================================================
    Block: List
@@ -8503,7 +8503,7 @@ body.logged-in .YouTubePopUp-Wrap {
 	position: absolute;
 	left: 0;
 	margin-right: 8px;
-	color: #1eb858;
+	color: purple;
 	font-family: "fontello";
 }
 
@@ -8534,7 +8534,7 @@ body.logged-in .YouTubePopUp-Wrap {
 }
 
 .header--fixed .logo__link {
-	color: #1eb858;
+	color: purple;
 }
 
 .logo__image {
@@ -8789,17 +8789,17 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .header--fixed .menu__item--button {
-	border-color: #1eb858;
+	border-color: purple;
 }
 
 .menu__item--button .menu__link {
-	color: #1eb858;
+	color: purple;
 	padding: 2px 40px 0 40px;
 	line-height: 36px;
 }
 
 .header--fixed .menu__item--button .menu__link {
-	color: #1eb858;
+	color: purple;
 }
 
 .menu__link {
@@ -8860,24 +8860,24 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .menu__item:hover > .menu__link {
-	color: #1eb858;
+	color: purple;
 }
 
 .menu__item:hover > .menu__link:after {
-	color: #1eb858;
+	color: purple;
 }
 
 .menu__link:hover {
 	text-decoration: none;
-	color: #1eb858;
+	color: purple;
 }
 
 .menu__link:hover:after {
-	color: #1eb858;
+	color: purple;
 }
 
 .menu__child .menu__link:hover {
-	color: #1eb858;
+	color: purple;
 }
 
 .menu__child .menu__link:hover:before {
@@ -8885,11 +8885,11 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .menu__item--active > .menu__link {
-	color: #1eb858;
+	color: purple;
 }
 
 .menu__child .menu__item--active .menu__link {
-	color: #1eb858;
+	color: purple;
 	position: relative;
 }
 
@@ -8900,7 +8900,7 @@ a[href^="https://maps.google.com/maps"] {
 	top: 13px;
 	width: 15px;
 	height: 1px;
-	background-color: #1eb858;
+	background-color: purple;
 	left: -30px;
 }
 
@@ -8971,7 +8971,7 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .mobile-menu__item:hover > .mobile-menu__link {
-	color: #1eb858;
+	color: purple;
 }
 
 .mobile-menu__item--button .mobile-menu__link {
@@ -9199,7 +9199,7 @@ a[href^="https://maps.google.com/maps"] {
 
 .pricing__price {
 	text-transform: uppercase;
-	color: #1eb858;
+	color: purple;
 	font-weight: 700;
 	font-size: 60px;
 }
@@ -9375,7 +9375,7 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .section-title__highlight {
-	color: #1eb858;
+	color: purple;
 }
 /* ==========================================================================
    Block: Section
@@ -9522,7 +9522,7 @@ a[href^="https://maps.google.com/maps"] {
 	counter-increment: dots;
 	content: "0" counter(dots);
 	margin-left: 3px;
-	color: #1eb858;
+	color: purple;
 }
 
 .slider:after {
@@ -9584,7 +9584,7 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .slider__highlight {
-	color: #1eb858;
+	color: purple;
 }
 
 @media all and (max-width: 1500px) {
@@ -9654,7 +9654,7 @@ a[href^="https://maps.google.com/maps"] {
 
 .socials__button:hover {
 	background: white;
-	color: #1eb858;
+	color: purple;
 }
 /* ==========================================================================
    Block: Stats
@@ -9670,7 +9670,8 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .stats__number {
-	color: #1eb858;
+	/* color: #1eb858; */
+	color: purple;
 	font-weight: 700;
 	font-size: 36px;
 	margin-bottom: 5px;
