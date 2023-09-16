@@ -6956,6 +6956,10 @@ a {
 	content: '\e807';
 }
 /* '' */
+.fontello-bitcoin:before {
+	content: '\e807';
+}
+/* '' */
 .fontello-vkontakte-rect:before {
 	content: '\e808';
 }
@@ -9634,6 +9638,10 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .socials__button--facebook {
+	background-color: purple;
+}
+
+.socials__button--bitcoin {
 	background-color: purple;
 }
 
