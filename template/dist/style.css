@@ -9634,11 +9634,11 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .socials__button--facebook {
-	background-color: #254d85;
+	background-color: purple;
 }
 
 .socials__button--twitter {
-	background-color: #00a6e0;
+	background-color: purple;
 }
 
 .socials__button--linkedin {
