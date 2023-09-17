@@ -9400,6 +9400,11 @@ a[href^="https://maps.google.com/maps"] {
 	padding: 115px 0;
 }
 
+.section--purple {
+	background-color: #800080;
+	padding: 115px 0;
+}
+
 .section--skin-1 {
 	background-image: url("../assets/img/common/backgrounds/skin-1.jpg");
 	background-size: 100% 965px;
