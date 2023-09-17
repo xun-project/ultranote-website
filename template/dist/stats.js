@@ -3,11 +3,18 @@ import fetch from 'node-fetch';
 import https from 'https';
 import Pusher from 'pusher';
 
+// const pusher = new Pusher({
+//     appId: "1649144",
+//     key: "d0e03326515d43703ca2",
+//     secret: "54038ead6b647c8ebc64",
+//     cluster: "us2",
+//     useTLS: true
+// });
 const pusher = new Pusher({
-    appId: "1649144",
-    key: "d0e03326515d43703ca2",
-    secret: "54038ead6b647c8ebc64",
-    cluster: "us2",
+    appId: "1671932",
+    key: "9c1d05ebf9f99906a402",
+    secret: "f0e3b1f72ade9286f395",
+    cluster: "eu",
     useTLS: true
 });
 const agent = new https.Agent({
@@ -42,7 +49,7 @@ async function fetchHashrate() {
     fetch('https://explorer.ultranote.org/q/hashrate/', { agent })
     .then(async response => {
         let data = await response.text();
-        // console.log(data);
+        console.log(data);
         pusher.trigger("Dragon","hash-rate", {
             message: data
         });
