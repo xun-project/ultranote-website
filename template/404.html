@@ -3,9 +3,9 @@
 
 <head>
 	<!-- Page title -->
-	<title>VSApp - Ultimate App Landing Page.</title>
+	<title>UltraNote Infinity</title>
 	<!-- Page description -->
-	<meta name="description" content="A professional HTML landing page for your mobile application. Developed by Vlad Sargu at VSArt.">
+	<meta name="description" content="UltraNote Infinity (XUNI) is a cryptocurrency project that utilizes the advanced CryptoNote V.2 technology to offer secure and decentralized transactions. In addition, it features an instant encrypted private messaging system with the ability to transfer files up to 100MB. To provide users with anonymous web browsing">
 	<!-- Meta -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,10 +35,19 @@
 	<!-- StyleSheets -->
 	<link rel="stylesheet" href="dist/style.css">
 	<!-- End of StyleSheets -->
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!-- Include dependencies: jquery, jquery.animateNumber, and jquery.inview -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="assets/js/vendor/plugins/jquery.animateNumber.js"></script>
+		<script src="assets/js/vendor/plugins/jquery.inview.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		
+		<!-- <script src="dist/stats.js" defer></script> -->
 </head>
 
-<body class="js-preload-me error-page">
+<body class="js-preload-me ">
 	<!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -57,20 +66,16 @@
 			<ul class="mobile-menu js-mobile-menu ">
 				<li class="mobile-menu__item ">
 					<a href="index.html" class="mobile-menu__link">Home</a>
-					<ul class="mobile-menu__child">
-						<li class="mobile-menu__item ">
-							<a href="index-2.html" class="mobile-menu__link">Home secondary</a>
-						</li>
-						<li class="mobile-menu__item ">
-							<a href="index-3.html" class="mobile-menu__link">Home tertiary</a>
-						</li>
-					</ul>
 				</li>
+				<li class="mobile-menu__item mobile-menu__item--button">
+					<a href="index.html#wallet" class="mobile-menu__link js-scroll-to">Wallet</a>
+				</li>
+			</ul>
 				<li class="mobile-menu__item ">
 					<a href="#features" class="mobile-menu__link js-scroll-to">Features</a>
 				</li>
 				<li class="mobile-menu__item ">
-					<a href="#" class="mobile-menu__link">Demo</a>
+					<a href="#" class="mobile-menu__link">Tutorials</a>
 					<ul class="mobile-menu__child">
 						<li class="mobile-menu__item ">
 							<a href="#video" class="mobile-menu__link js-scroll-to">Video</a>
@@ -81,21 +86,18 @@
 					</ul>
 				</li>
 				<li class="mobile-menu__item ">
-					<a href="#team" class="mobile-menu__link js-scroll-to">Team</a>
+					<a href="#exchanges" class="mobile-menu__link js-scroll-to">Exchanges</a>
 				</li>
 				<li class="mobile-menu__item ">
 					<a href="#gallery" class="mobile-menu__link js-scroll-to">Gallery</a>
 				</li>
 				<li class="mobile-menu__item ">
-					<a href="#plans" class="mobile-menu__link js-scroll-to">Plans</a>
+					<a href="#plans" class="mobile-menu__link js-scroll-to">Roadmap</a>
 				</li>
 				<li class="mobile-menu__item ">
 					<a href="#contacts" class="mobile-menu__link js-scroll-to">Contacts</a>
 				</li>
-				<li class="mobile-menu__item mobile-menu__item--button">
-					<a href="#download" class="mobile-menu__link js-scroll-to">Download</a>
-				</li>
-			</ul>
+
 		</div>
 		<!-- End of Mobile Menu -->
 		<!-- Header -->
@@ -109,6 +111,9 @@
 								<img src="assets/img/common/logo/logo.png" alt="Logo" class="logo__image js-logo__image" data-switch="true"> </a>
 						</div>
 						<!-- End of Logo -->
+
+						
+
 					</div>
 					<div class="col-md-20 col-sm-20 col-xs-12">
 						<!-- Menu -->
@@ -116,44 +121,39 @@
 							<ul class="menu menu--right js-menu sf-menu ">
 								<li class="menu__item ">
 									<a href="index.html" class="menu__link">Home</a>
-									<ul class="menu__child">
-										<li class="menu__item ">
-											<a href="index-2.html" class="menu__link">Home secondary</a>
-										</li>
-										<li class="menu__item ">
-											<a href="index-3.html" class="menu__link">Home tertiary</a>
-										</li>
-									</ul>
+									
 								</li>
-								<li class="menu__item ">
-									<a href="#features" class="menu__link js-scroll-to">Features</a>
-								</li>
-								<li class="menu__item ">
-									<a href="#" class="menu__link">Demo</a>
-									<ul class="menu__child">
-										<li class="menu__item ">
-											<a href="#video" class="menu__link js-scroll-to">Video</a>
-										</li>
-										<li class="menu__item ">
-											<a href="#screenshots" class="menu__link js-scroll-to">Screenshots</a>
-										</li>
-									</ul>
-								</li>
-								<li class="menu__item ">
-									<a href="#team" class="menu__link js-scroll-to">Team</a>
-								</li>
-								<li class="menu__item ">
-									<a href="#gallery" class="menu__link js-scroll-to">Gallery</a>
-								</li>
-								<li class="menu__item ">
-									<a href="#plans" class="menu__link js-scroll-to">Plans</a>
-								</li>
-								<li class="menu__item ">
-									<a href="#contacts" class="menu__link js-scroll-to">Contacts</a>
-								</li>
+							
 								<li class="menu__item menu__item--button">
-									<a href="#download" class="menu__link js-scroll-to">Download</a>
+									<a href="index.html#wallet" class="menu__link js-scroll-to">Wallet</a>
 								</li>
+								<li class="menu__item ">
+									<a href="index.html#features" class="menu__link js-scroll-to">Features</a>
+								</li>
+								<li class="menu__item ">
+									<a href="#" class="menu__link">Tutorials</a>
+									<ul class="menu__child">
+										<li class="menu__item ">
+											<a href="index.html#video" class="menu__link js-scroll-to">Video</a>
+										</li>
+										<li class="menu__item ">
+											<a href="index.html#screenshots" class="menu__link js-scroll-to">Screenshots</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item ">
+									<a href="index.html#exchanges" class="menu__link js-scroll-to">Exchanges</a>
+								</li>
+								<li class="menu__item ">
+									<a href="index.html#gallery" class="menu__link js-scroll-to">Gallery</a>
+								</li>
+								<li class="menu__item ">
+									<a href="index.html#plans" class="menu__link js-scroll-to">Roadmap</a>
+								</li>
+								<li class="menu__item ">
+									<a href="index.html#contacts" class="menu__link js-scroll-to">Contacts</a>
+								</li>
+
 							</ul>
 						</nav>
 						<!-- End of Menu -->
@@ -164,14 +164,13 @@
 				</div>
 			</div>
 		</header>
-		<!-- End of Header -->
 		<!-- Error -->
 		<div class="error  ">
 			<h1 class="error__title">
 				<span class="error__highlight"> Oops! </span>
-				<br> This page doesn't exist. </h1>
+				<br></h1>
 			<div class="error__wrapper">
-				<img src="blocks/error/img/404.png" alt="404 Error Image" class="error__image">
+				<img src="assets/img/404.png" alt="404 Error Image" class="error__image">
 				<span class="error__circle error__circle--primary">
 					<span class="error__circle error__circle--primary-inner"></span>
 					<span class="error__circle error__circle--secondary">
