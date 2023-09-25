@@ -130,7 +130,7 @@ async function fetchtotalbanked() {
     });
 }
 
-
+// pusher.bind("Dragon","pusher:subscription_succeeded", () => {alert(1111)});
 
     setInterval(() => {
         setTimeout(() => {

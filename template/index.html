@@ -43,7 +43,7 @@
 		<script src="assets/js/vendor/plugins/jquery.animateNumber.js"></script>
 		<script src="assets/js/vendor/plugins/jquery.inview.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-		
+		<link rel="stylesheet" href="./assets/roadmapcss/road_style.css">
 		<!-- <script src="dist/stats.js" defer></script> -->
 </head>
 
@@ -63,20 +63,19 @@
 		<!-- Mobile Menu -->
 		<div id="sidr">
 			<div class="mobile-menu__close js-mobile-menu__close"></div>
-			<ul class="mobile-menu js-mobile-menu ">
-				<li class="mobile-menu__item ">
+			<ul class="mobile-menu js-mobile-menu js-mobile-menu">
+				<li class="mobile-menu__item" style="margin-top: 10px;" onclick="menuLiClick_mobile(1)">
 					<a href="index.html" class="mobile-menu__link">Home</a>
 				</li>
-				<li class="mobile-menu__item mobile-menu__item--button">
+				<li class="mobile-menu__item " onclick="menuLiClick_mobile(2)">
 					<a href="#wallet" class="mobile-menu__link js-scroll-to">Wallet</a>
 				</li>
-			</ul>
-				<li class="mobile-menu__item ">
+				<li class="mobile-menu__item " onclick="menuLiClick_mobile(3)">
 					<a href="#features" class="mobile-menu__link js-scroll-to">Features</a>
 				</li>
-				<li class="mobile-menu__item ">
-					<a href="#" class="mobile-menu__link">Tutorials</a>
-					<ul class="mobile-menu__child">
+				<li class="mobile-menu__item " onclick="menuLiClick_mobile(4)">
+					<div class="mobile-menu__link">Tutorials</div>
+					<ul class="mobile-menu__child hidden" >
 						<li class="mobile-menu__item ">
 							<a href="#video" class="mobile-menu__link js-scroll-to">Video</a>
 						</li>
@@ -85,18 +84,19 @@
 						</li>
 					</ul>
 				</li>
-				<li class="mobile-menu__item ">
+				<li class="mobile-menu__item " onclick="menuLiClick_mobile(5)">
 					<a href="#exchanges" class="mobile-menu__link js-scroll-to">Exchanges</a>
 				</li>
-				<li class="mobile-menu__item ">
+				<li class="mobile-menu__item " onclick="menuLiClick_mobile(6)">
 					<a href="#gallery" class="mobile-menu__link js-scroll-to">Gallery</a>
 				</li>
-				<li class="mobile-menu__item ">
+				<li class="mobile-menu__item " onclick="menuLiClick_mobile(7)">
 					<a href="#plans" class="mobile-menu__link js-scroll-to">Roadmap</a>
 				</li>
-				<li class="mobile-menu__item ">
+				<li class="mobile-menu__item " onclick="menuLiClick_mobile(8)">
 					<a href="#contacts" class="mobile-menu__link js-scroll-to">Contacts</a>
 				</li>
+			</ul>
 
 		</div>
 		<!-- End of Mobile Menu -->
@@ -115,22 +115,22 @@
 						
 
 					</div>
-					<div class="col-md-20 col-sm-20 col-xs-12">
+					<div class="col-md-20 col-sm-20 col-xs-12" style="margin-top: 9px;">
 						<!-- Menu -->
 						<nav>
-							<ul class="menu menu--right js-menu sf-menu ">
-								<li class="menu__item ">
+							<ul class="menu menu--right js-menu sf-menu " id="web-menu">
+								<li class="menu__item menu__item--button" onclick="menuLiClick(1)">
 									<a href="index.html" class="menu__link">Home</a>
 									
 								</li>
 							
-								<li class="menu__item menu__item--button">
+								<li class="menu__item " onclick="menuLiClick(2)">
 									<a href="#wallet" class="menu__link js-scroll-to">Wallet</a>
 								</li>
-								<li class="menu__item ">
+								<li class="menu__item " onclick="menuLiClick(3)">
 									<a href="#features" class="menu__link js-scroll-to">Features</a>
 								</li>
-								<li class="menu__item ">
+								<li class="menu__item " onclick="menuLiClick(4)">
 									<a href="#" class="menu__link">Tutorials</a>
 									<ul class="menu__child">
 										<li class="menu__item ">
@@ -141,16 +141,16 @@
 										</li>
 									</ul>
 								</li>
-								<li class="menu__item ">
+								<li class="menu__item " onclick="menuLiClick(5)">
 									<a href="#exchanges" class="menu__link js-scroll-to">Exchanges</a>
 								</li>
-								<li class="menu__item ">
+								<li class="menu__item " onclick="menuLiClick(6)">
 									<a href="#gallery" class="menu__link js-scroll-to">Gallery</a>
 								</li>
-								<li class="menu__item ">
+								<li class="menu__item " onclick="menuLiClick(7)">
 									<a href="#plans" class="menu__link js-scroll-to">Roadmap</a>
 								</li>
-								<li class="menu__item ">
+								<li class="menu__item " onclick="menuLiClick(8)">
 									<a href="#contacts" class="menu__link js-scroll-to">Contacts</a>
 								</li>
 
@@ -837,7 +837,102 @@
 						<h2 class="section-title section-title--center "> <span class='section-title__highlight'>ROADMAP</span>
 						</h2>
 						<!-- End of Section Title -->
-					
+						<ul id="road">
+							<li style="--accent-color:#41516C">
+								<div class="date">March 2020</div>
+								<div class="title">UltraNote Infinity Platform Refactoring</div>
+								<div class="descr">Refactoring UltraNote platform codebase based on CryptoNote V.2. Security improvements and more features to be added.
+								</div>
+							</li>
+							<li style="--accent-color:#FBCA3E">
+								<div class="date">May 2020</div>
+								<div class="title">Launching Mainnet</div>
+								<div class="descr">Launching mainnet to do proper testing for wallets and mining pools. Coins generated will be used to do coin swap for XUN holders.</div>
+							</li>
+							<li style="--accent-color:#E24A68">
+								<div class="date">June 2020</div>
+								<div class="title">Release of UltraNote Infinity GUI Wallets</div>
+								<div class="descr">Release of new UltraNote Infinity GUI wallets with new features and new design.</div>
+							</li>
+							<li style="--accent-color:#1B5F8C">
+								<div class="date">August 2020</div>
+								<div class="title">UltraNote Infinity Discord Wallet</div>
+								<div class="descr">Release of UltraNote Infinity Discord wallet, A Mobile friendly wallet for fast transactions.</div>
+							</li>
+							<li style="--accent-color:#4CADAD">
+								<div class="date">December 2020</div>
+								<div class="title">GUI wallet upgrade 1.0.3</div>
+								<div class="descr">New version of our GUI wallet released, New version includes wallet enhancement for better performance and faster load. Bug fixes. Added Fiat value to the wallet balance. Added new notifications. Added language support for Russian, Turkish and Chinese.</div>
+							</li>
+
+							<li style="--accent-color:#41516C">
+								<div class="date">March 2021</div>
+								<div class="title">UltraNote Infinity Cloud Release</div>
+								<div class="descr">Release of UltraNote Cloud, An online web based wallet for XUNI coin.
+								</div>
+							</li>
+							<li style="--accent-color:#E24A68">
+								<div class="date">June 2021</div>
+								<div class="title">UltraNote Infinity on Binance smart chain</div>
+								<div class="descr">Added UltraNote Infinity token bXUNI to Binance smart chain.</div>
+							</li>
+							<li style="--accent-color:#1B5F8C">
+								<div class="date">November 2021</div>
+								<div class="title">UltraNote Infinity Cloud Messaging Release</div>
+								<div class="descr">Release of UltraNote Infinity encrypted cloud messaging with up to 100Mb file transfer.</div>
+							</li>
+							<li style="--accent-color:#4CADAD">
+								<div class="date">December 2021</div>
+								<div class="title">Listing UltraNote Infinity Vuollet Mobile Wallet</div>
+								<div class="descr">Listing of UltraNote Infinity on Vuollet mobile wallet app.</div>
+
+								<div class="title">UltraNote Infinity on Fantom Network</div>
+								<div class="descr">Added UltraNote Infinity token $FXUNI to Fantom network.</div>
+							</li>
+
+							<li style="--accent-color:#41516C">
+								<div class="date">March 2022</div>
+								<div class="title">UltraNote Infinity Mobile Wallet Release</div>
+								<div class="descr">Release of UltraNote Infinity mobile app for XUNI coin with basic functionality. Send/receive and store coins.
+								</div>
+							</li>
+							<li style="--accent-color:#E24A68">
+								<div class="date">April 2022</div>
+								<div class="title">UltraNote Infinity Mobile Messaging Release</div>
+								<div class="descr">Release of UltraNote Infinity mobile encrypted messaging with file transfer up to 100 Mb.</div>
+							</li>
+							<li style="--accent-color:#1B5F8C">
+								<div class="date">September 2023</div>
+								<div class="title">UltraNote Infinity Cloud Chat Release</div>
+								<div class="descr">Release of UltraNote Infinity encrypted cloud Chat.</div>
+							</li>
+							<li style="--accent-color:#4CADAD">
+								<div class="date">October 2023</div>
+								<div class="title">UltraNote Infinity Mobile Chat Release</div>
+								<div class="descr">Release of UltraNote Infinity encrypted Mobile Chat.</div>
+							</li>
+
+							<li style="--accent-color:#41516C">
+								<div class="date">February 2024</div>
+								<div class="title">UltraNote Infinity Cloud Deposit Release</div>
+								<div class="descr">Release of UltraNote Infinity cloud deposit.</div>
+							</li>
+							<li style="--accent-color:#E24A68">
+								<div class="date">April 2024</div>
+								<div class="title">UltraNote Infinity Mobile Deposit Release</div>
+								<div class="descr">Release of UltraNote Infinity mobile deposit.</div>
+							</li>
+							<li style="--accent-color:#1B5F8C">
+								<div class="date">July 2024</div>
+								<div class="title">UltraNote Infinity Cloud Billing Release</div>
+								<div class="descr">Release of UltraNote Infinity encrypted cloud billing and merchant tools.</div>
+							</li>
+							<li style="--accent-color:#4CADAD">
+								<div class="date">December 2024</div>
+								<div class="title">UltraNote Infinity Mobile Billing Release</div>
+								<div class="descr">Release of UltraNote Infinity mobile billing with merchant tools.</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="row">
@@ -940,7 +1035,7 @@
         </div>
     </div>
 </div>
-<section class="section section--blue " id='twitter'>
+<section class="section section--blue " id='twitter' style="background-color: purple;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-md-offset-6 col-sm-16 col-sm-offset-4">
@@ -1012,6 +1107,7 @@
 	<!-- Scripts -->
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<script src="dist/script.js"></script>
+	<script src="./assets/js/customize.js"></script>
 	<!-- End of Scripts -->
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 	<!-- 
@@ -1028,6 +1124,10 @@ ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 
 	<script src="https://js.pusher.com/8.0.1/pusher.min.js"></script>
 	<script>
+
+		$(document).ready(function() { 
+			// alert(1)
+		});
 
 		// Enable pusher logging - don't include this in production
 	

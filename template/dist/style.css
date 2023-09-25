@@ -8543,8 +8543,8 @@ body.logged-in .YouTubePopUp-Wrap {
 
 .logo__image {
 	display: block;
-	width: 85px;
-	height: 85px;
+	width: 50px;
+	height: 50px;
 }
 /* ==========================================================================
    Block: Map
@@ -8836,6 +8836,16 @@ a[href^="https://maps.google.com/maps"] {
 	top: 0px;
 }
 
+.mobile-menu__link.sf-with-ul:after {
+	margin-left: 5px;
+	font-size: 13px;
+	color: #abafb8;
+	font-weight: 300;
+	font-family: "fontello";
+	position: absolute;
+	top: 0px;
+}
+
 .menu__child .menu__link {
 	font-size: 12px;
 	line-height: 30px;
@@ -8927,8 +8937,8 @@ a[href^="https://maps.google.com/maps"] {
 	cursor: pointer;
 	overflow: hidden;
 	position: absolute;
-	top: 25px;
-	right: 25px;
+	top: 8px;
+	right: 6px;
 	z-index: 150;
 }
 
@@ -8941,6 +8951,7 @@ a[href^="https://maps.google.com/maps"] {
 	content: '';
 	position: absolute;
 	top: 50%;
+	background-color: white;
 }
 
 .mobile-menu__close:before {
@@ -8972,6 +8983,15 @@ a[href^="https://maps.google.com/maps"] {
 	text-align: center;
 	border: none !important;
 	font-size: 16px;
+	/* background-color: #1a4ee5; */
+	background-color: purple;
+	margin-bottom: 19px !important;
+	color: white;
+	border-radius: 3px;
+}
+
+.mobile-menu__item a {
+	color: white !important;
 }
 
 .mobile-menu__item:hover > .mobile-menu__link {
@@ -8979,6 +8999,7 @@ a[href^="https://maps.google.com/maps"] {
 }
 
 .mobile-menu__item--button .mobile-menu__link {
+	/* background: #1eb858; */
 	background: #1eb858;
 	color: white;
 	text-align: center;
@@ -9001,9 +9022,10 @@ a[href^="https://maps.google.com/maps"] {
 
 .sidr {
 	width: 100%;
-	padding: 20px 80px;
+	padding: 20px 33px;
 	display: none;
 	z-index: 100;
+	background-color: rgba(31,4,80);
 }
 
 .sidr.right {
@@ -10341,7 +10363,7 @@ div.video:before {
 	}
 
 	.header {
-		padding: 35px 13px;
+		padding: 17px 13px;
 	}
 
 	.list {
@@ -10475,4 +10497,19 @@ div.video:before {
 	.socials__item {
 		margin-bottom: 20px;
 	}
+}
+
+.menu__child .menu__item a {
+	font-size: 18px !important;
+}
+.mobile-menu__child li {
+	margin-bottom: 0px !important;
+	background-color: #7e8beb !important;
+	border-bottom: 1px solid #624f4f !important;
+}
+.show{
+	display: block;
+}
+.hidden {
+	display: none;
 }
