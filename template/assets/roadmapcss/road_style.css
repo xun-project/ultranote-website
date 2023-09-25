@@ -36,7 +36,7 @@ ul#road {
   list-style: none;
   width: min(60rem, 90%);
   margin-inline: auto;
-  margin-bottom: 150px;
+  margin-bottom: 65px;
 }
 
 /* line */

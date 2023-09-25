@@ -8479,6 +8479,7 @@ body.logged-in .YouTubePopUp-Wrap {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	padding: 15px 0;
+	color: white;
 }
 
 .link-list__link {
@@ -9380,7 +9381,7 @@ a[href^="https://maps.google.com/maps"] {
 .section-subtitle--hero {
 	text-transform: none;
 	color: white;
-	opacity: .3;
+	/* opacity: .3; */
 }
 /* ==========================================================================
    Block: Section Title
