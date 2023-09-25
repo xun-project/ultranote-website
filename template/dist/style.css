@@ -9393,7 +9393,7 @@ a[href^="https://maps.google.com/maps"] {
 .section-title {
 	font-size: 26px;
 	font-weight: 700;
-	margin-bottom: 20px;
+	margin-bottom: 62px;
 	line-height: 34px;
 }
 
@@ -9423,7 +9423,7 @@ a[href^="https://maps.google.com/maps"] {
 
 .section--blue {
 	background-color: #1c57ff;
-	padding: 115px 0;
+	padding: 115px 0 10px 0;
 }
 
 .section--purple {
@@ -10516,4 +10516,14 @@ div.video:before {
 }
 .hidden {
 	display: none;
+}
+
+footer.footer .footer-copyright {
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(255,255,255,.6);
+    background-color: rgba(0,0,0,.2);
+    text-align: center;
+    font-size: .9rem;
 }
