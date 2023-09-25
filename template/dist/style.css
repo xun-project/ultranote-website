@@ -10527,3 +10527,18 @@ footer.footer .footer-copyright {
     text-align: center;
     font-size: 1.2rem;
 }
+@media only screen and (max-width: 580px) and (min-width: 480px) {
+	footer.footer .footer-copyright {
+		font-size: 1rem;
+	}	
+}
+@media only screen and (max-width: 480px) and (min-width: 380px) {
+	footer.footer .footer-copyright {
+		font-size: 0.8rem;
+	}	
+}
+@media only screen and (max-width: 380px) {
+	footer.footer .footer-copyright {
+		font-size: 0.8rem;
+	}	
+}
