@@ -8479,7 +8479,10 @@ body.logged-in .YouTubePopUp-Wrap {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	padding: 15px 0;
-	color: white;
+}
+
+.link-list__item a {
+	color: white !important;
 }
 
 .link-list__link {
