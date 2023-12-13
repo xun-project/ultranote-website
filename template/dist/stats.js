@@ -10,13 +10,13 @@ import Pusher from 'pusher';
 //     cluster: "us2",
 //     useTLS: true
 // });
-const pusher = new Pusher({
-    appId: "1671932",
-    key: "9c1d05ebf9f99906a402",
-    secret: "f0e3b1f72ade9286f395",
-    cluster: "eu",
-    useTLS: true
-});
+// const pusher = new Pusher({
+//     appId: "1671932",
+//     key: "9c1d05ebf9f99906a402",
+//     secret: "f0e3b1f72ade9286f395",
+//     cluster: "eu",
+//     useTLS: true
+// });
 const agent = new https.Agent({
     rejectUnauthorized: false
 });
@@ -132,21 +132,21 @@ async function fetchtotalbanked() {
 
 // pusher.bind("Dragon","pusher:subscription_succeeded", () => {alert(1111)});
 
-    setInterval(() => {
-        setTimeout(() => {
-            fetchHashrate();
-        },400)
-        setTimeout(() => {
-            fetchHeight();
-        },800)
-        setTimeout(() => {
-            fetchtotalsupply();
-        },1200)
-        setTimeout(() => {
-            fetchSupply();
-        },1600)
-        setTimeout(() => {
-            fetchtotalbanked();
-        },2000)
-    },2000)
+    // setInterval(() => {
+    //     setTimeout(() => {
+    //         fetchHashrate();
+    //     },400)
+    //     setTimeout(() => {
+    //         fetchHeight();
+    //     },800)
+    //     setTimeout(() => {
+    //         fetchtotalsupply();
+    //     },1200)
+    //     setTimeout(() => {
+    //         fetchSupply();
+    //     },1600)
+    //     setTimeout(() => {
+    //         fetchtotalbanked();
+    //     },2000)
+    // },2000)
     
