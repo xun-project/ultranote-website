@@ -9491,6 +9491,10 @@ a[href^="https://maps.google.com/maps"] {
 	color: #008efc;
 	font-family: "fontello";
 }
+
+.contract-address {
+	line-break: anywhere;
+}
 /* ==========================================================================
    Block: widget
    Dependencies: Fontello.less
@@ -9503,10 +9507,7 @@ a[href^="https://maps.google.com/maps"] {
 	border: 2px solid purple !important;
 	border-radius: 50px;
 	margin: auto;
-}
-
-iframe span  {
-	display: none;
+	max-width: 100%;
 }
 /* ==========================================================================
    Block: Slider
