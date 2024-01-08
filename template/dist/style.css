@@ -9454,6 +9454,8 @@ a[href^="https://maps.google.com/maps"] {
 	padding: 170px 0;
 }
 
+
+
 .section--no-pb {
 	padding-bottom: 0 !important;
 }
@@ -9488,6 +9490,23 @@ a[href^="https://maps.google.com/maps"] {
 	margin-right: 6px;
 	color: #008efc;
 	font-family: "fontello";
+}
+/* ==========================================================================
+   Block: widget
+   Dependencies: Fontello.less
+   ========================================================================== */
+.widget-container {
+	display: flex;
+}
+
+.widget-container iframe {
+	border: 2px solid purple !important;
+	border-radius: 50px;
+	margin: auto;
+}
+
+iframe span  {
+	display: none;
 }
 /* ==========================================================================
    Block: Slider
@@ -10542,8 +10561,5 @@ footer.footer .footer-copyright {
 		font-size: 0.8rem;
 	}	
 }
-
-
-
 
 
