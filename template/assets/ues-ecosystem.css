@@ -1,0 +1,54 @@
+:root{color-scheme:dark;--bg:#050d1e;--surface:#0b1730;--surface2:#102143;--text:#eefaff;--muted:#afc9e4;--line:rgba(96,213,247,.25);--cyan:#40e5eb;--violet:#9475ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#050d1e;color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit;text-decoration:none}a:hover{color:#74eeff}a:focus-visible,button:focus-visible{outline:3px solid #76f0ff;outline-offset:4px}
+.ues-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.ues-header{position:sticky;top:0;z-index:30;background:rgba(5,13,30,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.ues-header .ues-wrap{display:flex;align-items:center;justify-content:space-between;min-height:78px;gap:22px}
+.ues-brand{display:flex;align-items:center;gap:12px;font-weight:780;letter-spacing:.03em}
+.ues-brand svg{height:38px;width:38px;flex-shrink:0}
+.ues-brand small{display:block;color:#9dbad7;font-size:.7rem;letter-spacing:.14em;font-weight:600}
+.ues-nav{display:flex;flex-wrap:wrap;align-items:center;gap:24px;font-size:.9rem;color:#c6ddf4}
+.ues-nav a:hover{color:var(--cyan)}
+.ues-nav .ues-nav-cta{border:1px solid #3a9ac0;border-radius:9px;padding:9px 15px;color:#c3faff}
+.ues-hero{position:relative;overflow:hidden;padding:110px 0 108px;background:radial-gradient(ellipse at 77% 40%,rgba(80,72,194,.32),transparent 39%),radial-gradient(ellipse at 12% 81%,rgba(5,210,211,.13),transparent 42%),linear-gradient(115deg,#07132c 0%,#0a1b3a 52%,#080c27 100%)}
+.ues-hero:before{content:"";position:absolute;right:-160px;top:18px;width:680px;height:680px;border:1px solid rgba(78,220,255,.2);border-radius:50%;box-shadow:0 0 0 80px rgba(60,143,241,.035),0 0 0 160px rgba(96,66,229,.025);pointer-events:none}
+.ues-hero:after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),transparent)}
+.ues-hero-inner{position:relative;max-width:760px;z-index:1}
+.ues-kicker{color:#55e9f0;text-transform:uppercase;letter-spacing:.21em;font-size:.76rem;font-weight:800}
+.ues-hero h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:1.08;letter-spacing:-.045em;margin:22px 0 24px}
+.ues-gradient{background:linear-gradient(100deg,#60eff7,#72a6ff 53%,#ba95ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ues-lead{font-size:clamp(1rem,2vw,1.25rem);color:#bed5eb;max-width:630px;line-height:1.8}
+.ues-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.ues-button{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;min-height:46px;padding:11px 23px;font-weight:700;transition:transform .2s}
+.ues-button:hover{transform:translateY(-2px)}
+.ues-button-primary{background:linear-gradient(105deg,#17b9ce,#236cda);color:white;box-shadow:0 12px 35px #0c80d033}
+.ues-button-outline{border:1px solid rgba(112,214,252,.42);background:#0b2045;color:#c7f8ff}
+.ues-hero-note{margin-top:26px;display:inline-block;border:1px solid rgba(75,223,234,.32);border-radius:30px;color:#b8e2f1;font-size:.8rem;padding:7px 13px}
+.ues-section{padding:84px 0;background:var(--bg)}
+.ues-section-alt{background:linear-gradient(180deg,#08152e,#0a1833)}
+.ues-section h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;letter-spacing:-.035em;margin:10px 0 16px}
+.ues-intro{max-width:750px;color:#b7cce2;margin:0 0 38px}
+.ues-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.ues-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:280px;padding:26px;border-radius:18px;border:1px solid var(--line);background:radial-gradient(ellipse at 100% 0%,rgba(54,119,240,.19),transparent 55%),linear-gradient(145deg,#112346,#0b1730);box-shadow:0 14px 34px rgba(0,0,0,.19)}
+.ues-card:before{content:"";position:absolute;top:0;left:18px;right:18px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+.ues-card[data-accent="orange"]{background:radial-gradient(ellipse at 100% 0%,rgba(231,100,46,.22),transparent 55%),linear-gradient(145deg,#112346,#0b1730)}
+.ues-card[data-accent="violet"]{background:radial-gradient(ellipse at 100% 0%,rgba(141,87,249,.22),transparent 55%),linear-gradient(145deg,#112346,#0b1730)}
+.ues-card[data-accent="gold"]{background:radial-gradient(ellipse at 100% 0%,rgba(223,168,60,.21),transparent 55%),linear-gradient(145deg,#112346,#0b1730)}
+.ues-card-symbol{display:flex;justify-content:center;align-items:center;height:58px;width:58px;border:1px solid rgba(83,220,246,.4);border-radius:16px;background:rgba(46,169,224,.09);color:#4de2f7;font-size:30px;margin-bottom:23px}
+.ues-card h3{color:white;font-size:1.23rem;line-height:1.3;margin:0 0 12px}
+.ues-card p{color:#b7cce2;margin:0 0 22px;font-size:.93rem}
+.ues-card .ues-status{margin-top:auto;color:#7de8f1;font-weight:700;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.ues-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:35px}
+.ues-step{border-left:2px solid var(--cyan);padding:5px 0 5px 22px}
+.ues-step b{color:#72e9f4;font-size:1.7rem}.ues-step h3{margin:8px 0}.ues-step p{color:var(--muted)}
+.ues-notice{background:rgba(19,47,86,.66);border:1px solid var(--line);border-radius:16px;padding:26px}
+.ues-notice h3{margin:0 0 10px}.ues-notice p{color:#c4d9ed;margin:0}
+.ues-footer{background:#040b1b;border-top:1px solid var(--line);padding:36px 0;color:#a9c0d8}
+.ues-footer .ues-wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ues-footer a{color:#b1eaf4}
+.ues-footer-links{display:flex;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.ues-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ues-header .ues-wrap{flex-wrap:wrap;padding-top:15px;padding-bottom:15px}.ues-nav{gap:15px}.ues-steps{grid-template-columns:1fr}}
+@media(max-width:620px){.ues-grid{grid-template-columns:1fr}.ues-hero{padding:74px 0 78px}.ues-header .ues-wrap{align-items:flex-start}.ues-nav{font-size:.81rem;gap:12px}.ues-section{padding:64px 0}.ues-hero h1{font-size:2.65rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ues-button{transition:none}.ues-button:hover{transform:none}}
